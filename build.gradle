@@ -14,7 +14,7 @@ buildscript {
 }
 
 plugins {
-    id "io.freefair.lombok" version "8.4"
+    id "io.freefair.lombok" version "8.13"
     id "me.shedaniel.unified-publishing" version "0.1.+"
 }
 
@@ -211,6 +211,8 @@ mixin {
 }
 
 dependencies {
+    implementation 'org.projectlombok:lombok:1.18.28'
+
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.

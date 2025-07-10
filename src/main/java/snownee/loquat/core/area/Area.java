@@ -45,6 +45,8 @@ public abstract class Area {
 	@Setter
 	@Nullable
 	private CompoundTag attachedData;
+	@Setter
+	public Map<String, Object> customDataMap = new HashMap<>();
 
 	public abstract boolean contains(int x, int y, int z);
 
@@ -101,7 +103,7 @@ public abstract class Area {
 	public abstract double distanceToSqr(Vec3 vec);
 
 	public Optional<BlockPos.MutableBlockPos> findSpawnPos(ServerLevel world, String zoneId, Entity entity) {
-		int attempts = 10;
+		int attempts = 50;
 		BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
 		List<LivingEntity> nearbyEntities = world.getEntitiesOfClass(LivingEntity.class, getRoughAABB(), EntitySelector.NO_SPECTATORS);
 		int bestAttemptX = 0;

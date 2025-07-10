@@ -9,4 +9,7 @@ public interface LoquatKubeJSEvents {
 
 	EventHandler AREA_ENTERED = GROUP.server("playerEnteredArea", () -> PlayerAreaEventJS.class).extra(Extra.STRING);
 	EventHandler AREA_LEFT = GROUP.server("playerLeftArea", () -> PlayerAreaEventJS.class).extra(Extra.STRING);
+
+	EventHandler AREA_SPAWN_MOB_WAVE_TICK = GROUP.server("areaSpawnMobWaveTick", () -> AreaSpawnMobWaveTickEventJS.class);
+
 }
